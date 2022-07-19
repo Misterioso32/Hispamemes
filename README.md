@@ -6,7 +6,8 @@ actualmente el npm con mas memes de los npms de la comunidad hispana
 
 Proximamente video memes
 
-(Objectivo llegar a +1000 memes diferentes)
+(Objectivo llegar a +1000 memes diferentes en formato imagen
+y +500 memes diferentes en formato video)
 
 si encuentras algun error no dudes en reportarlo o al gmail o al dm de discord Misterioso32#4542
 ## Instalación

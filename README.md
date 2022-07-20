@@ -1,8 +1,8 @@
 # hispamemes
-Npm muy simple dedicado a generar imagenes/videos de memes de la comunidad hispanohablante
-actualmente el npm con mas memes de los npms de la comunidad hispana
+Npm muy simple dedicado a generar imagenes/videos de memes de la comunidad 
+ hispanohablante actualmente el npm con mas memes de los npms de la comunidad hispana
 
-+250 Memes diferentes en formato imagen en español
++300 Memes diferentes en formato imagen en español
 
 Proximamente video memes
 
@@ -19,19 +19,47 @@ npm i hispamemes
 const hispamemes = require("hispamemes");
 const meme = hispamemes.meme();
 ```
-## Ejemplo
+## Ejemplo basico
 ```js
 const hispamemes = require("hispamemes");
-const meme = hispamemes.meme();
+
+const meme = hispamemes.meme(); //Hacemos que se genere/cambie el meme de manera random
 
 const embed = new Discord.MessageEmbed()
   .setTitle("Meme Imagen")
   .setColor("BLUE")
-  .setImage(meme)
+  .setImage(meme) 
   .setFooter({text: `Meme pedido por ${message.member.displayName}`})
   .setTimestamp()
   
 message.channel.send({ embeds: [embed] })
+```
+## Ejemplo handler
+```js
+const Discord = require('discord.js');
+const hispamemes = require("hispamemes");
+
+
+module.exports = {
+    nombre: 'meme',
+    category: 'Diversion',
+    premium: false,
+    alias: [ 'memes' ],
+      run: async (client, message, args) => {
+
+      const meme = hispamemes.meme(); //Hacemos que se genere/cambie el meme de manera random
+
+        const embed = new Discord.MessageEmbed()
+        .setTitle("Meme")
+        .setColor("BLUE")
+        .setImage(meme)
+        .setFooter({text: `Solicitado por ${message.member.displayName}`})
+        .setTimestamp()
+    
+        message.channel.send({ embeds: [embed] })
+
+      }
+}
 ```
 ## Advertencias
 - Algunos memes pueden ser ofesivos para algunas personas o colectivos
